@@ -1,0 +1,172 @@
+/*清除浮动代码*/
+.clearfloat{zoom:1}
+.clearfloat:after{display: block;clear:both;content:"";visibility: hidden;height:0}
+.body{
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+}
+.rygl-tableBox{
+    width: calc(100% - 40px);
+    height: calc(100% - 150px);
+    overflow: hidden;
+}
+.rygl-main{
+    width: 100%;
+    height: calc(100% - 65px);
+    overflow: hidden;
+}
+.rygl-main::-webkit-scrollbar{width: 0}
+.uploadImg{
+    width: calc(100% - 115px);
+    height: 110px;
+    margin: 5px 10px;
+    border: 1px solid #CCCCCC;
+    float: left;
+}
+.upload-img{
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+}
+.nums{
+    font-size: 18px;
+    color:#333;
+    float: left;
+}
+.photo{
+    display: block;
+    width: 40px;
+    height: 35px;
+    margin: 5px 40px;
+}
+.search-table td .select {
+    display: block;
+    width: calc(100% - 50px);
+    height: 25px;
+    margin: 0 0 0 10px;
+    border: 1px solid #CCCCCC;
+    text-indent: 15px;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    /*background: url(../img/jt.png) no-repeat center right;*/
+}
+.select-menuText{
+    width: calc(100% - 25px);
+    height: 100%;
+    line-height: 25px;
+    cursor: pointer;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: inherit;
+    margin-right: 23px;
+}
+.select-menuBox{
+    width: 100%;
+    max-height: 250px;
+    overflow: auto;
+    border:1px solid #7B9DD4;
+    background: #fff;
+    position: absolute;
+    top: 25px;
+    left: -1px;
+    display: none;
+    z-index: 100;
+}
+.select-menuBox::-webkit-scrollbar{width: 0;}
+.select-menuBox li{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    text-indent: 25px;
+    cursor:pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.select-menuBox li:hover{
+    background: #1E90FF;
+    color:#ffffff;
+}
+
+.allRY{
+    width: calc(100% - 50px);
+    position: absolute;
+    top: 32px;
+    left: 10px;
+    background: #ffffff;
+    border: 1px solid #0C86E3;
+    z-index: 100;
+    display: none;
+}
+.allRY-menu{
+    width: 100%;
+    max-height: 300px;
+    overflow: auto;
+}
+.allRY-menu::-webkit-scrollbar{width: 0;}
+.allRY-menu li{
+    padding:0 5px;
+    line-height: 20px;
+    border-radius:4px;
+    cursor: pointer;
+    color:#fff;
+    display: inline-block;
+    margin:10px;
+    background: #0C86E3;;
+    font-size: 12px;
+}
+.addBatchEmployee{
+    display: inline-block;
+    padding: 6px 8px 6px 20px;
+    font-size: 12px;
+    color: #fff;
+    background: #247bd5 url("../img/load.png") no-repeat 6px center ;
+    border-radius: 3px;
+    margin: 0 10px;
+    cursor: pointer;
+    float: right;
+    text-indent: 7px;
+}
+.addBatchEmployee.deleteBatchEmployee{
+    background: #247bd5 url("../img/delete.png") no-repeat 6px center ;
+}
+.addBatchEmployee.deleteBatchEmployee:hover{
+    background:  #FFBC03 url("../img/delete.png") no-repeat 6px center ;
+}
+.xz{
+    display: inline-block;
+    padding: 6px 8px 6px 20px;
+    font-size: 12px;
+    color: #fff;
+    background: #247bd5 url("../img/xz.png") no-repeat 6px center ;
+    border-radius: 3px;
+    margin: 0 10px;
+    cursor: pointer;
+    float: right;
+    text-indent: 7px;
+}
+.addBatchEmployee:hover{
+background: #FFBC03 url("../img/load.png") no-repeat 6px center ;
+}
+.xz:hover{
+    color:#ffffff;
+    background: #FFBC03 url("../img/xz.png") no-repeat 6px center ;
+}
+.employeeSelect{
+    width: 20px;
+    height: 20px;
+    background: url(../img/select.png) no-repeat;
+    background-size: 100% 100%;
+    float: left;
+    margin-left: 8px;
+    cursor:pointer;
+}
+.employeeSelect.on{
+    background: url(../img/onSelect.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+

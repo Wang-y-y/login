@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable,width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>会议签到后台管理系统会议管理</title>
+    <!--公用-->
+    <link rel="stylesheet" href="../../resource/css/base.css">
+    <link rel="stylesheet" href="../../resource/css/defined.css">
+    <script src="../../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="../../resource/js/jquery.js"></script>
+    <script src="../../resource/js/defined.js"></script>
+    <script src="js/cnchar.latest.min.js"></script>
+    <!--自定义-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/setChry.js"></script>
+    <script>
+        $(function () {
+            setChry.init();
+        });
+    </script>
+    <style>
+        .result-table thead td:nth-of-type(6){
+            width: 270px;
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <!--弹框-->
+    <div class="result-box js-resultBox" style="width:99%;display: block;top:0;transform: translate(-50%);">
+        <div class="result-box-title">
+            <span>新建会议</span>
+            <!--<span class="js-closeResultBox">×</span>-->
+        </div>
+        <div class="result-box-main">
+            <table class="search-table search-table1">
+                <tr>
+                    <td class="table-title ">会议主题</td>
+                    <td class="must"><input type="text" class="js-addmTitle" placeholder=""></td>
+                    <td class="table-title">会议室</td>
+                    <td class="must">
+                        <div class="select" style="width: calc(100% - 23px);">
+                            <div class="select-menuText js-addloadMeetingRoom">-请选择-</div>
+                            <ul class="select-menuBox js-addMeetingRoom">
+                                <li>-请选择-</li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td class="table-title">会议时间</td>
+                    <td colspan="3" class=" mettingTime" style="position: relative">
+                        <input autocomplete="off" type="text" id="date" placeholder="请选择会议日期" style="width:25%;display: inline-block;">
+                        <input autocomplete="off" type="text" id="time" placeholder="会议开始时间" style="width:20%;display: inline-block;margin-right: 5px;">-
+                        <input autocomplete="off" type="text" id="endTime" placeholder="会议结束时间" style="width:20%;display: inline-block;margin-left: 5px;">
+
+                        <img src="" id="uploadImg">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="table-title">参会人员</td>
+                    <td colspan="7">
+                        <div class="addChry-box">
+                            <!--<img src="img/add.png" class="addChry-btn js-addChryBtn">-->
+
+                            <div class="addChry-main">
+                                <div class="addChry-tr">
+                                    <!--<ul class="addChry-menu js-addMeetingChryMenu">-->
+
+                                    <!--</ul>-->
+                                    <table class="addChry-menu">
+                                        <thead>
+                                        <tr><td></td><td>姓名</td><td>公司</td><td>座位号</td></tr>
+                                        </thead>
+                                        <tbody class="js-addMeetingChryMenu"></tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-title">座位分布</td>
+                    <td colspan="7">
+                        <div class="result-box-main" style="height: auto">
+                            <!--<div class="result-confirm js-addMeetingChry">确定</div>-->
+                            <div class="js-addRynum">已添加：0人</div>
+                            <table class="search-table search-table1">
+                                <tr>
+                                    <td class="table-title ">姓名</td>
+                                    <td class="must1" colspan="3" style="position: relative;">
+                                        <input type="text" class="js-addChryName" style="width: calc(100% - 500px);display: inline-block;">
+                                        <div class="seatSort js-seatSort" data-isSeatSort="true">手动排序</div>
+                                        <div class="OnekeySort js-OnekeySort" id="OnekeySort">一键重排</div>
+                                        <!--<a class="xz" href="img\upload.rar">下载模板</a>-->
+                                        <div class="addBatchEmployee js-putExcTemplate" id="putExcTemplate">人员导入</div>
+                                        <div class="allRY js-allRY">
+                                            <ul class="allRY-menu js-allRYmenu">
+
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display:none;">
+                                    <td class="table-title ">提示语</td>
+                                    <td colspan="3"><input type="text" class="js-addChryTips"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <div class="zw-mian js-zwMain">
+                                            <ul class=" js-rostrumzwNumBox" style="width: 20px;overflow: hidden;margin: 5px 0;padding: 5px 0;display: inline-block;vertical-align: top;text-align: center;">
+                                                <li>主席台</li>
+                                            </ul>
+                                            <ul class="zw-box js-rostrumzwBox">
+
+                                            </ul>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <ul class="zw-numBox js-zwNumBox js-seatViewNumBox">
+
+                                        </ul>
+                                        <ul class="zw-box js-seatViewmain">
+
+                                        </ul>
+                                        <ul class="zwsm">
+                                            <li>发言等候</li>
+                                            <li>主席台</li>
+                                            <li>已选择</li>
+                                            <li>可选择</li>
+                                            <li>工作席位</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+
+                    </td>
+                </tr>
+            </table>
+            <div class="result-confirm  js-closeResultBox" style="margin-top: 15px;margin-left: 15px;">关闭</div>
+            <div class="result-confirm  js-addMeeting" style="margin-top: 15px;">确定</div>
+
+        </div>
+    </div>
+    <!--右键删除-->
+    <div class="delSeat js-delSeat">删除</div>
+</div>
+</body>
+</html>

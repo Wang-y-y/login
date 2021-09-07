@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!--<base href="<%=basePath%>">-->
+    <meta charset="UTF-8">
+    <title>智能会议通知系统</title>
+    <link rel="icon" href="img/1.png">
+    <link rel="stylesheet" href="../resource/css/base.css">
+    <script src="../resource/js/jquery.js"></script>
+    <script src="../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        $(function () {
+            login.init();
+        });
+    </script>
+</head>
+<body>
+<div class="body">
+    <div class="index-box js-index-box">
+        <!--<div class="box-icon"></div>-->
+        <div class="title">智能会议通知系统</div>
+        <div class="login-box js-login-box">
+            <div class="content">
+                <div class="content-field-box js-content-field-box">
+                    <span class="content-field-label"><img src="img/user.png" style="margin-top: -15px;"></span>
+                    <input class="content-field-value" type="text" name="username" placeholder="请输入帐号" value="admin">
+                </div>
+                <div class="content-field-box js-content-field-box">
+                    <span class="content-field-label"><img src="img/password.png"  style="margin-top: -15px;"></span>
+                    <input class="content-field-value" type="password" name="password" placeholder="请输入密码" value="123456">
+                </div>
+                <div class="content-button-box">
+                    <div class="content-button js-login">登录</div>
+                </div>
+            </div>
+        </div>
+        <div class="Copyright">Copyright <span>c</span>  2021 合肥国际商贸职业技术学院 王洋洋毕业作品</div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable,width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>会议签到后台管理系统会议管理</title>
+    <!--公用-->
+    <link rel="stylesheet" href="../../resource/css/base.css">
+    <link rel="stylesheet" href="../../resource/css/defined.css">
+    <script src="../../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="../../resource/js/jquery.js"></script>
+    <script src="../../resource/js/defined.js"></script>
+    <!--自定义-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <style>
+        .photo {
+            display: block;
+            width: 40px;
+            height: 35px;
+            margin: 5px 40px;
+        }
+    </style>
+    <script>
+        $(function () {
+            main.init();
+            defined.init();
+        });
+    </script>
+    <style>
+        .result-table thead td:nth-of-type(6){
+            width: 270px;
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <!--title-->
+    <div class="title"><span>会议管理</span></div>
+    <!--button-bar-->
+    <div class="button-bar" style="text-align: right;">
+        <span class="field-button  js-addResult"  style="margin-right: 20px;padding: 6px 20px 6px 20px;">新建</span>
+    </div>
+    <!--result-table-->
+    <div class="table-box hygl-tableBox">
+        <div class="hygl-main js-meetingMain">
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>会议主题</td>
+                        <td>时间</td>
+                        <td>地点</td>
+                        <td>会议室名称</td>
+                        <td>参会人员</td>
+                        <td>会议状态</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody class="js-meetingTableBox">
+                    <tr>
+                        <td>1</td>
+                        <td>计算机应用毕业作品审核</td>
+                        <td>2021-10-01</td>
+                        <td>教室B202</td>
+                        <td>教室B202</td>
+                        <td>计算机应用1班</td>
+                        <td>使用</td>
+                        <td>
+                            <div class="result-btn fl" style="margin: 0 35px;">删除</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>计算机应用实习工作总结</td>
+                        <td>2022-7-01</td>
+                        <td>教室B202</td>
+                        <td>教室B202</td>
+                        <td>计算机应用1班</td>
+                        <td>关闭</td>
+                        <td>
+                            <div class="result-btn fl" style="margin: 0 35px;">删除</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--分页-->
+        <div id="page" class="page"></div>
+    </div>
+    <!--重新发送-->
+    <div class="result-box js-resendBox" style="width: 60%;height: 450px;top: 50%;">
+        <div class="result-box-title">
+            <span>失败记录</span>
+            <span class="js-closeResendBox">×</span>
+        </div>
+        <div class="result-box-main">
+            <div class="resend-main">
+                <table class="result-table" style="margin-top: 10px;table-layout: auto;">
+                    <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>姓名</td>
+                        <td>公司</td>
+                        <td>部门</td>
+                        <td>电话</td>
+                    </tr>
+                    </thead>
+                    <tbody class="js-errCuntTableBox">
+                    <!--<tr>-->
+                    <!--<td>1</td>-->
+                    <!--<td>-->
+                    <!--<img src="img/12.jpg" class="photo">-->
+                    <!--</td>-->
+                    <!--<td>南京XX</td>-->
+                    <!--<td>后厨</td>-->
+                    <!--<td>主厨</td>-->
+                    <!--<td>zc001</td>-->
+                    <!--<td>025-27656628</td>-->
+                    <!--<td>897799@qq.com</td>-->
+                    <!--<td>897799@qq.com</td>-->
+                    <!--<td>-->
+                    <!--<div class="result-btn fl">修改</div>-->
+                    <!--<div class="result-btn fl">删除</div>-->
+                    <!--</td>-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+            <div class="result-confirm js-errCountSend">重新发送</div>
+        </div>
+    </div>
+    <!--进度条-->
+    <div class="progress-main js-progress-main">
+        <div class="progress-conBox js-progressConBox">
+            <div class="progress-con">
+            <div class="progress-box">
+            <div class="zhangbo-bg-box">
+            <div class="zhangbo-bg-bar js-progress-bar"><span class="zhangbo-bg-text js-progress-text">0%</span></div>
+            </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

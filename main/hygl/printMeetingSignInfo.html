@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../resource/css/base.css">
+    <script src="../../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="../../resource/js/jquery.js"></script>
+    <title>预览会议签到</title>
+    <style>
+        .printMeeting-body{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .printMeeting-title{
+            width: 100%;
+            font-size: 30px;
+            font-family: "微软雅黑";
+            font-weight: bold;
+            color:#000000;
+            text-align: center;
+        }
+        .printMeeting-subTitle{
+            width: 100%;
+            font-size: 18px;
+            margin: 15px 0;
+            color:#000000;
+        }
+        .printMeeting-subTitle span{
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .printMeeting-table{
+            width: 100%;
+        }
+        .printMeeting-table table{
+            width: 100%;
+            border:1px solid #DEDEDE;
+        }
+        .printMeeting-table table td{
+            border:1px solid #000000;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 15px;
+            color:#000000;
+        }
+
+        .addBatchEmployee{
+            display: inline-block;
+            padding: 6px 8px 6px 20px;
+            font-size: 12px;
+            color: #fff;
+            background: #247bd5 url("img/excel.png") no-repeat 6px center ;
+            border-radius: 3px;
+            margin: 0 10px;
+            cursor: pointer;
+            float: right;
+            text-indent: 10px;
+        }
+        .addBatchEmployee:hover{
+            background: #FFBC03 url("img/excel.png") no-repeat 6px center ;
+        }
+
+        .result-confirm{
+            float: right;
+            padding: 0 10px;
+            height: 25px;
+            line-height: 25px;
+            background: #1F80B9;
+            border-radius:4px;
+            cursor:pointer;
+            color:#fff;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            renderPrintMeeting();
+        });
+        function covernString(obj){
+
+            if(obj==null||obj=='null'||obj=="null"||obj=="\"null\""||obj==undefined||obj=='undefined'||obj=="undefined"||obj== ' '||obj==" "||obj.indexOf("null")>0){
+                return '';
+            }else{
+                return obj;
+            }
+        }
+        var renderPrintMeeting = function () {
+            var printMeetingData = JSON.parse(sessionStorage.getItem('printMeeting'))==null?[]:JSON.parse(sessionStorage.getItem('printMeeting'));
+
+            var timeArr = (printMeetingData.resp.seTime).replace("#","-").split('-');
+            var meetingTime = timeArr[0]+"年"+timeArr[1]+"月"+timeArr[2]+"日"+" "+timeArr[3]+"-"+timeArr[4];
+            $(".js-printMeetingTitle").text(printMeetingData.resp.title);
+            $(".js-printMeetingRoomName").text("位置："+printMeetingData.resp.roomName);
+            $(".js-printMeetingseTime").text("时间："+meetingTime);
+            $(".js-printMeetingAllnum").text("应到人数："+printMeetingData.resp.data.length+"人");
+            $(".js-printMeetingNum").text("实到人数："+printMeetingData.resp.signCount+"人");
+            $(".js-printMeetingTable").empty();
+            if(printMeetingData.resp.data){
+                console.log(printMeetingData.resp.data);
+                printMeetingData.resp.data.forEach(function (item,index) {
+                    var signStatus = {
+                        "0":"是",
+                        "-1":"否"
+                    };
+                    var num = index + 1;
+                    var tr = '<tr>\n' +
+                                '<td>'+num+'</td>'+
+                                '<td>'+covernString(item.employeeName)+'</td>\n' +
+                                '<td>'+covernString(item.company)+'</td>\n' +
+                                '<td>'+covernString(item.department)+'</td>\n' +
+                                '<td>'+covernString(item.lev)+'</td>\n' +
+                                // '<td>'+item.seatNum.replace("-","排")+"座"+'</td>\n' +
+                                '<td>'+item.signTime+'</td>\n' +
+                                '<td>'+signStatus[item.signStatus]+'</td>\n' +
+                            '</tr>';
+                    $(".js-printMeetingTable").append(tr);
+                });
+            }
+            //关闭
+            $(".js-closeResultBox").click(function () {
+                //window.close("setChry.html")
+                parent.$(".js-iframe").attr("src","../hygl/index.html");
+            });
+        }
+
+    </script>
+</head>
+<body>
+    <div class="printMeeting-body">
+
+        <div class="result-confirm  js-closeResultBox" style="margin-top: 15px;margin-left: 15px;">关闭</div>
+        <div class="printMeeting-title js-printMeetingTitle">2019年度工作总结报告</div>
+        <div class="printMeeting-subTitle">
+            <span class="js-printMeetingRoomName">位置：</span>
+            <span class="js-printMeetingseTime">时间：</span>
+            <span class="js-printMeetingAllnum">应到人数：</span>
+            <span class="js-printMeetingNum">实到人数：</span>
+            <!--<div class="addBatchEmployee">导出Excel</div>-->
+        </div>
+        <div class="printMeeting-table">
+            <table>
+                <thead>
+                    <tr>
+                        <td>序号</td>
+                        <td>姓名</td>
+                        <td>公司</td>
+                        <td>部门</td>
+                        <td>级别</td>
+                        <td>签到时间</td>
+                        <td>签到</td>
+                    </tr>
+                </thead>
+                <tbody class="js-printMeetingTable">
+                    <tr>
+                        <td>吴曦</td>
+                        <td>安徽电力</td>
+                        <td>8排6座</td>
+                        <td>20185</td>
+                        <td>否</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

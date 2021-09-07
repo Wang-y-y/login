@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable,width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>会议签到后台管理系统会议管理</title>
+    <!--公用-->
+    <link rel="stylesheet" href="../../resource/css/base.css">
+    <link rel="stylesheet" href="../../resource/css/defined.css">
+    <script src="../../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="../../resource/js/jquery.js"></script>
+    <script src="../../resource/js/defined.js"></script>
+    <!--自定义-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/setChrySeat.js"></script>
+    <script>
+        $(function () {
+            setChrySeat.init();
+        });
+    </script>
+    <style>
+        .result-table thead td:nth-of-type(6){
+            width: 270px;
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <!--座位布局弹框-->
+    <div class="result-box js-seatViewBox" style="width:99%;top:0;transform:translate(-50%);padding-bottom: 10px;display: block;">
+        <div class="result-box-title">
+            <span style="float: left;">座位布局</span>
+            <!--<span class="js-closeSeatViewBox">×</span>-->
+        </div>
+        <div class="result-box-main ">
+            <table class="search-table search-table1">
+                <tr>
+                    <td colspan="4">
+                        <div class="zw-mian js-zwMain">
+                            <ul class=" js-rostrumzwNumBox" style="width: 20px;overflow: hidden;margin: 5px 0;padding: 5px 0;display: inline-block;vertical-align: top;text-align: center;">
+                                <li>主席台</li>
+                            </ul>
+                            <ul class="zw-box js-rostrumzwBox">
+
+                            </ul>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div class="zw-mian js-zwMain">
+                            <ul class="zw-numBox js-seatViewNumBox">
+
+                            </ul>
+                            <ul class="zw-box js-seatViewmain">
+
+                            </ul>
+                            <ul class="zwsm">
+                                <li>发言等候</li>
+                                <li>主席台</li>
+                                <li>已选择</li>
+                                <li>可选择</li>
+                                <li>工作席位</li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="result-confirm  js-closeSeatViewBox" style="margin-top: 15px;">关闭</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

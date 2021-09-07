@@ -1,0 +1,27 @@
+{
+  "colNum": "4",
+  "rostrumcolNum": "1",
+  "rostrumrowNum": "1",
+  "rowNum": "4",
+  "deviceIdAr": [10,8],
+  "seatARR":[
+     {"seatStatus": "seat07", "seatNum": "1-1", "seatId": "seat1-1", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "1-2", "seatId": "seat1-2", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "1-3", "seatId": "seat1-3", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "1-4", "seatId": "seat1-4", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "2-1", "seatId": "seat2-1", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "2-2", "seatId": "seat2-2", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "2-3", "seatId": "seat2-3", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "2-4", "seatId": "seat2-4", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "3-1", "seatId": "seat3-1", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "3-2", "seatId": "seat3-2", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "3-3", "seatId": "seat3-3", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "3-4", "seatId": "seat3-4", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "4-1", "seatId": "seat4-1", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "4-2", "seatId": "seat4-2", "seatSite": "1"},
+     {"seatStatus": "", "seatNum": "4-3", "seatId": "seat4-3", "seatSite": "1"},
+     {"seatStatus": "seat07", "seatNum": "4-4", "seatId": "seat4-4", "seatSite": "1"}
+  ]
+
+
+}

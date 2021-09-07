@@ -1,0 +1,138 @@
+/*清除浮动代码*/
+.clearfloat{zoom:1}
+.clearfloat:after{display: block;clear:both;content:"";visibility: hidden;height:0}
+.body{
+    width: 100%;
+    height: 100%;
+}
+.head-box{
+    width: 100%;
+    height: 60px;
+    background: #3B5379;
+    /* background: url(../img/headBg.png) no-repeat; */
+}
+.title{
+    font-size: 25px;
+    height: 60px;
+    line-height: 60px;
+    text-indent: 10px;
+    color: #fff;
+    /* font-family: cursive; */
+    float: left;
+    letter-spacing: 4px;
+}
+.title img{
+    margin: -7px 30px 0 20px;
+    display: inline-block;
+}
+.head-icon{
+    float: right;
+    font-size: 14px;
+    color: #ffffff;
+    cursor:pointer;
+   text-indent:25px;
+    margin:25px 20px 0 0;
+}
+.head-icon.layout{
+    background: url("../img/layout.png") no-repeat center left;
+}
+.head-icon.user{
+    background: url("../img/user.png") no-repeat center left;
+}
+/*main*/
+.main{
+    width:100%;
+    height: calc(100% - 60px);
+    overflow: hidden;
+    background: #F7F7F7;
+}
+.left-box{
+    width: 105px;
+    height: 100%;
+    background: #243B5B;
+    display: inline-block;
+    border-right: 1px solid #e6e6ed;
+    color:#fff;
+}
+.menu-btn{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #243B5B;
+    border-radius: 4px;
+    float: left;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;    white-space: nowrap;
+}
+.menu-btn:hover,.menu-btn.on{background:#4F7DE7;}
+.menu-btn .menu-icon{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px auto 5px auto;
+    /*border-radius: 50%;*/
+}
+.menu-btn img{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px auto 5px auto;
+}
+.menu-btn:nth-of-type(1):hover .menu-icon,.menu-btn:nth-of-type(1) .menu-icon{
+    background: url("../img/txl.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(2):hover .menu-icon,.menu-btn:nth-of-type(2) .menu-icon{
+    background: url("../img/zj.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(3):hover .menu-icon,.menu-btn:nth-of-type(3) .menu-icon{
+    background: url("../img/ly.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(4):hover .menu-icon,.menu-btn:nth-of-type(4) .menu-icon{
+    background:  url("../img/hy.png") no-repeat center center;
+}
+
+.menu-btn:nth-of-type(1).on .menu-icon{
+    background: url("../img/txlOn.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(2).on .menu-icon{
+    background: url("../img/zjOn.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(3).on .menu-icon{
+    background: url("../img/lyOn.png") no-repeat center center;
+}
+.menu-btn:nth-of-type(4).on .menu-icon{
+    background:  url("../img/hyOn.png") no-repeat center center;
+}
+
+.right-box{
+    width: calc(100% - 130px);
+    height: calc(100% - 30px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 10px 10px 10px;
+}
+.meeting-num{
+    width:450px;
+    height:40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(30,59,91,.3);
+    position: absolute;
+    top:0;
+    left:50%;
+    transform: translateX(-50%);
+    color:#247BD5;
+    font-size: 13px;
+}
+.meeting-num span{
+    color:#EA8121;
+    padding: 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+
+

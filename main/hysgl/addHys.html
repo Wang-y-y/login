@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable,width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>会议签到后台管理系统会议室管理</title>
+    <!--公用-->
+    <link rel="stylesheet" href="../../resource/css/base.css">
+    <link rel="stylesheet" href="../../resource/css/defined.css">
+    <script src="../../resource/js/layui/layui.js"></script>
+    <link rel="stylesheet" href="../../resource/js/layui/css/layui.css" type="text/css"/>
+    <script src="../../resource/js/jquery.js"></script>
+    <script src="../../resource/js/defined.js"></script>
+    <!--自定义-->
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/addHys.js"></script>
+    <style>
+        .result-table td:nth-of-type(6){
+            width: 100px;
+        }
+        .sb.must:after {
+            width: 10px;
+            height: 10px;
+            content: '*';
+            color: red;
+            font-size: 28px;
+            position: absolute;
+            top: 10px;
+            right: 275px;
+        }
+    </style>
+    <script>
+        $(function () {
+            addHys.init();
+            defined.init();
+        });
+    </script>
+</head>
+<body>
+<div class="body">
+
+    <!--弹框-->
+    <div class="result-box js-resultBox" style="top:0%;padding-bottom: 10px;    transform: translate(-50%);display: block;width:calc(100% - 25px);padding: 10px">
+            <div class="result-box-title">
+                <span style="float: left;">新建会议室</span>
+                <!--<span class="js-closeResultBox">×</span>-->
+            </div>
+            <div class="result-box-main ">
+                <table class="search-table search-table1">
+                    <tr>
+                        <td class="table-title ">会议室名称</td>
+                        <td class="must"><input type="text" class="js-roomName"></td>
+                        <td class="table-title">会议室位置</td>
+                        <td><input type="text" class="js-roomAddr"></td>
+                        <td class="table-title ">设备</td>
+                        <td class="sb mettingTime" colspan="3" style="position: relative">
+                            <!--<select name="" id="zw" class="js-deviceId" style="width: calc(100% - 300px);">-->
+
+                            <!--</select>-->
+                            <div class="select-menuText js-deviceIdText">-请选择-</div>
+                            <ul class="select-menuBox js-deviceId">
+                                <li>-请选择-</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="table-title">主席台设置</td>
+                        <td colspan="7">
+                            <ul class="zwbj">
+                                <li>行数：<input class="js-rostrumcolNum" type="text" max="" placeholder=""></li>
+                                <li>列数：<input class="js-rostrumrowNum" type="text" max="" placeholder=""></li>
+                                <li class="result-confirm js-rostrumcanvasBj" style="margin: 1px">布局</li>
+                            </ul>
+                            <div class="zw-mian js-zwMain">
+                                <ul class="zw-numBox js-rostrumzwNumBox">
+
+                                </ul>
+                                <ul class="zw-box js-rostrumzwBox">
+
+                                </ul>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-title">座位布局</td>
+                        <td colspan="7">
+                            <ul class="zwbj">
+                                <li>行数：<input class="js-colNum" type="text" max="40" placeholder="最大行数40"></li>
+                                <li>列数：<input class="js-rowNum" type="text" max="80" placeholder="最大列数80"></li>
+                                <li class="result-confirm js-canvasBj" style="margin: 1px">布局</li>
+                            </ul>
+                            <div class="zw-mian js-zwMain">
+                                <ul class="zw-numBox js-zwNumBox">
+
+                                </ul>
+                                <ul class="zw-box js-zwBox">
+
+                                </ul>
+                                <ul class="zwsm">
+                                    <li>发言等候</li>
+                                    <li>主席台</li>
+                                    <li>已选择</li>
+                                    <li>可选择</li>
+                                    <li>工作席位</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="result-confirm js-closeResultBtn" style="margin-top: 10px;margin-left: 15px;">关闭</div>
+                <div class="result-confirm js-hysAddConfirm" style="margin-top: 10px;">确定</div>
+            </div>
+        </div>
+    <!--右键-->
+    <ul class="right-key js-rightKey">
+        <li data-type="fydh">发言等候</li>
+        <li data-type="gzx">工作席</li>
+        <li data-type="gd">过道</li>
+        <li data-type="seat07">禁止选择</li>
+        <li data-type="cx" class="js-zxli">撤销</li>
+    </ul>
+
+</div>
+</body>
+</html>
